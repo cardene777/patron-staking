@@ -8,44 +8,54 @@ import { useState } from 'react';
 export default function Page() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [lastName, setLastName] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
+  const [Name, setName] = useState("");
+  const [ProfileImage, setProfileImage] = useState("");
+  const [Whatdoyoudo, setWhatdoyoudo] = useState("");
+  const [WalletAddress, setWalletAddress] = useState("");
+  const [Discription, setDiscription] = useState("");
+  const [Sociallink, setSociallink] = useState("");
 
-  const onChangeLastName = (e: any) => {
-    setLastName(e.target.value);
+  const onChangeName = (e: any) => {
+    setName(e.target.value);
   };
 
-  const onChangeFirstName = (e: any) => {
-    setFirstName(e.target.value);
+  const onChangeProfileImage = (e: any) => {
+    setProfileImage(e.target.value);
   };
 
-  const onChangeEmail = (e: any) => {
-    setEmail(e.target.value);
+  const onChangeWhatdoyoudo = (e: any) => {
+    setWhatdoyoudo(e.target.value);
   };
 
-  const onChangeTel = (e: any) => {
-    setTel(e.target.value);
+  const onChangeWalletAddress = (e: any) => {
+    setWalletAddress(e.target.value);
+  };
+
+  const onChangeDiscription = (e: any) => {
+    setDiscription(e.target.value);
+  };
+
+  const onChangeSociallink = (e: any) => {
+    setSociallink(e.target.value);
   };
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    if (lastName !== "" && firstName !== "" && email !== "" && tel !== "") {
+    if (Name !== "" && ProfileImage !== "" && Whatdoyoudo !== "" && WalletAddress !== "" && Discription !== "") {
       setIsSubmitted(true);
     }
   };
   return (
   <>
-    <header class="flex justify-between">
+    <header className="flex justify-between">
         <Link href="/">
-          <Image src="/PatronStaking.png" width={300} height={300} alt="PatronStaking" class="p-8"/>
+          <Image src="/PatronStaking.png" width={300} height={300} alt="PatronStaking" className="p-8"/>
         </Link>
-        <div class="text-right  p-5">
-          <button class="px-2 py-1 bg-white-400 text-lg text-black font-semibold rounded-full hover:bg-white-500 border border-{black}">
+        <div className="text-right  p-5">
+          <button className="px-2 py-1 bg-white-400 text-lg text-black font-semibold rounded-full hover:bg-white-500 border border-{black}">
             <Link href="login">Log in</Link>
           </button>
-          <button class="px-2 py-1 bg-green-400 text-lg text-black font-semibold rounded-full hover:bg-green-500">
+          <button className="px-2 py-1 bg-green-400 text-lg text-black font-semibold rounded-full hover:bg-green-500">
             <Link href="signup">Get Started</Link>
           </button>
         </div>
@@ -76,7 +86,29 @@ export default function Page() {
                   type="text"
                   defaultValue=""
                   placeholder="James Camelon"
-                  onChange={onChangeLastName}
+                  onChange={onChangeName}
+                />
+              </div>
+            </div>
+            <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  htmlFor="inline-last-name"
+                >
+                  Image
+                  <text className="text-red  font-normal text-sm ml-2 p-0.5 rounded-md">
+                    *
+                  </text>
+                </label>
+              </div>
+              <div className="md:w-2/3">
+                <input
+                  type="file"
+                  name="example"
+                  accept="image/jpeg, image/png"
+                  defaultValue=""
+                  onChange={onChangeProfileImage}
                 />
               </div>
             </div>
@@ -99,7 +131,30 @@ export default function Page() {
                   type="text"
                   defaultValue=""
                   placeholder="an ambassador of Avalanche Japan from 3 years ago"
-                  onChange={onChangeFirstName}
+                  onChange={onChangeWhatdoyoudo}
+                />
+              </div>
+            </div>
+            <div className="md:flex md:items-center mb-6">
+              <div className="md:w-1/3">
+                <label
+                  className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  htmlFor="inline-first-name"
+                >
+                  What is your wallet address
+                  <text className="text-red  font-normal text-sm ml-2 p-0.5 rounded-md">
+                    *
+                  </text>
+                </label>
+              </div>
+
+              <div className="md:w-2/3">
+                <input
+                  className="bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  type="text"
+                  defaultValue=""
+                  placeholder="0x3d7863e87AFD6cc4bB584c3d07f5D1EaA6D26822"
+                  onChange={onChangeWalletAddress}
                 />
               </div>
             </div>
@@ -116,11 +171,10 @@ export default function Page() {
               <div className="md:w-2/3">
                 <input
                   className="bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                  type="email"
-                  value={email}
+                  type="text"
                   defaultValue=""
                   placeholder="I onboard developers to Avalanche Network as a Avalanche Japan member. I held Japanese Avalanche networking event and technical workshop this January and April. In addition, I posts 'Avalanch News' thread every week from 3 years ago."
-                  onChange={onChangeEmail}
+                  onChange={onChangeDiscription}
                 />
               </div>
             </div>
@@ -136,7 +190,7 @@ export default function Page() {
                   className="bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   type="text"
                   defaultValue=""
-                  onChange={onChangeTel}
+                  onChange={onChangeSociallink}
                 />
               </div>
             </div>

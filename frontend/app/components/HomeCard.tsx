@@ -1,7 +1,11 @@
 "use client";
 
-import Image from "@/node_modules/next/image";
+import Image from "next/image";
 
+
+type Props = {
+  id: string
+}
 
 function HomeCard() {
   return (
