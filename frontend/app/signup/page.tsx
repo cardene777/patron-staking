@@ -1,58 +1,13 @@
-<<<<<<< HEAD
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { writeDb } from "@lib/tableland"
 import { User } from "@/common/types";
-=======
-"use client"
-import Link from 'next/link'
-import Image from 'next/image'
-import { useState } from 'react';
-
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
-
-const supabase = createClientComponentClient()
-
-async function signInWithGithub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',       
-    })
-  }
-  async function signInWithTwitter() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'twitter',
-    })
-  }
-  
-
-const supabase = createClientComponentClient()
-
-async function signInWithGithub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',       
-    })
-  }
-  async function signInWithTwitter() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'twitter',
-    })
-  }
-  
+import { signInWithGithub, signInWithTwitter } from "@lib/supabase";
 
 export default function Page() {
-<<<<<<< HEAD
-=======
 
-  const supabase = createClientComponentClient();
-
-<<<<<<< HEAD
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
-=======
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");
   const [profileImage, setProfileImage] = useState("");
@@ -135,78 +90,9 @@ export default function Page() {
             <Link href="signup">Get Started</Link>
           </button>
         </div>
-<<<<<<< HEAD
-      </header>
-=======
     </header>
     <button onClick={signInWithGithub}>Github auth</button>
     <button onClick={signInWithTwitter}>Twitter auth</button>
-    <main>
-      <div className="mt-40 mx-20">
-        <div className="flex justify-center mt-32 mx-10 mb-10">
-          <form className="w-full max-w-2xl" onSubmit={onSubmit}>
-            <p className="text-2xl text-black font-bold text-center mb-5">
-              Make your profile!
-            </p>
-            <div className="md:flex md:items-center mb-6">
-              <div className="md:w-1/3">
-                <label
-                  className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  htmlFor="inline-last-name"
-                >
-                  Name
-                  <text className="text-red  font-normal text-sm ml-2 p-0.5 rounded-md">
-                    *
-                  </text>
-                </label>
-              </div>
-              <div className="md:w-2/3">
-                <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                  type="text"
-                  defaultValue=""
-                  placeholder="James Camelon"
-                  onChange={onChangeName}
-                />
-              </div>
-            </div>
-            
-            <div className="md:flex md:items-center mb-6">
-              <div className="md:w-1/3">
-                <label
-                  className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  htmlFor="inline-last-name"
-                >
-                  Image
-                  <text className="text-red  font-normal text-sm ml-2 p-0.5 rounded-md">
-                    *
-                  </text>
-                </label>
-              </div>
-              <div className="md:w-2/3">
-                <input
-                  type="file"
-                  name="example"
-                  accept="image/jpeg, image/png"
-                  defaultValue=""
-                  onChange={onChangeProfileImage}
-                />
-              </div>
-            </div>
-            <div className="md:flex md:items-center mb-6">
-              <div className="md:w-1/3">
-                <label
-                  className="block text-black font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  htmlFor="inline-first-name"
-                >
-                  What do you do in 1 sentence
-                  <text className="text-red  font-normal text-sm ml-2 p-0.5 rounded-md">
-                    *
-                  </text>
-                </label>
-              </div>
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
-
       <main>
         <div className="mt-40 mx-20">
           <div className="flex justify-center mt-32 mx-10 mb-10">
@@ -365,4 +251,3 @@ export default function Page() {
     </>
   );
 }
-

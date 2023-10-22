@@ -4,14 +4,7 @@ import HomeCard from "./components/HomeCard";
 
 export default function Page() {
   return (
-<<<<<<< HEAD
     <>
-=======
-  <>
-<<<<<<< HEAD
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
-=======
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
       <header className="flex justify-between">
         <Link href="/">
           <Image
@@ -32,9 +25,6 @@ export default function Page() {
         </div>
       </header>
       <main>
-<<<<<<< HEAD
-
-<<<<<<< HEAD
       <h1 className="text-5xl text-center font-bold">
         A contributor is worth patroning
       </h1>
@@ -50,25 +40,8 @@ export default function Page() {
         <HomeCard />
         <HomeCard />
       </Link>
-    </>
-  );
-=======
-=======
 
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
-        <h1 className="text-5xl text-center font-bold">A contributor is worth patroning</h1>
-        <div className="m-5 text-3xl text-center">A OSS contributor, Ecosystem contributor and researcher can do their activities from a long-term perspective with their patron</div>
-        
-        <Link href="tonyejang" className="flex justify-between flex-wrap">
-          {/* ここにProfileImageとName + "is" + whatdoyoudo をdbから引っ張ってくる*/}
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
-
-          </Link>
       </main>
- </>
+      </>
   )
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
 }

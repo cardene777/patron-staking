@@ -1,14 +1,15 @@
 'use client'
 
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
-import { useState, useEffect} from 'react'
+import { useState } from 'react'
+import { signInWithGithub } from "@lib/supabase"
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function Login() {
+  const supabase = createClientComponentClient();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const router = useRouter()
-  const supabase = createClientComponentClient()
 
   const handleSignUp = async () => {
     await supabase.auth.signUp({
@@ -17,13 +18,6 @@ export default function Login() {
     })
     router.refresh()
   }
-
-  async function signInWithGithub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-    })
-  }
-  
 
   const handleSignIn = async () => {
     await supabase.auth.signInWithPassword({
