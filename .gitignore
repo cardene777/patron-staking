@@ -5,6 +5,10 @@ coverage.json
 typechain
 typechain-types
 
+# Hardhat
+types/
+.vscode/
+
 # Logs
 logs
 *.log
