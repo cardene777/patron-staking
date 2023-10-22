@@ -105,7 +105,7 @@ function DescribePatron() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default DescribePatron;
+export default DescribePatron

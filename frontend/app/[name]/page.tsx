@@ -3,7 +3,7 @@ import ProfileDetail from "@/components/ProfileDetail";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { name: string } }) {
   return (
     <>
       <header className="flex justify-between">
