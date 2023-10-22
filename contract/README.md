@@ -1,13 +1,27 @@
-# Sample Hardhat Project
+# Patron Staking
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+## Setup
 
-Try running some of the following tasks:
+```bash
+$ npm install
+```
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+## Compile
+
+```bash
+$ npx hardhat compile
+```
+
+## Test
+
+```bash
+$ npx hardhat test
+```
+
+## Deploy
+
+### Testnet(Mumbai)
+
+```bash
+$ npx hardhat run scripts/mock/deploy.ts --network mumbai
 ```

@@ -21,6 +21,10 @@ $ cp .env.sample .env
 
 ## 💻 Code
 
+### DB
+
+- `patron_staking_80001_8127`
+
 ### Connect DB
 
 - [network.js](./src/network.js)

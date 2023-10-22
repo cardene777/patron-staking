@@ -1,6 +1,5 @@
 "use client";
-import { ConnectButton } from '@rainbow-me/rainbowkit'
-
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 function DescribePatron() {
   return (
