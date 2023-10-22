@@ -26,14 +26,17 @@ export default function Page() {
         <h1 className="text-5xl text-center font-bold">A contributor is worth patroning</h1>
         <div className="m-5 text-3xl text-center">A OSS contributor, Ecosystem contributor and researcher can do their activities from a long-term perspective with their patron</div>
         
-        <Link href="tonyejang" className="flex justify-between flex-wrap">
+        
           {/* ここにProfileImageとName + "is" + whatdoyoudo をdbから引っ張ってくる*/}
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
-
-          </Link>
+          <div className="grid grid-cols-4 gap-4">
+            <Link href="tonyejang" className="flex justify-between flex-wrap">
+              <HomeCard/>
+            </Link>
+            <HomeCard/>
+            <HomeCard/>
+            <HomeCard/>
+          </div> 
+          
       </main>
  </>
   )

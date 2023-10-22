@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import ProfileDetail from '@/components/ProfileDetail'
-import DiscribePatron from '@/components/DiscribePatron'
+import DescribePatron from '@/components/DescribePatron'
 
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { name: string } }) {
   return (
   <>
     <header className="flex justify-between">
@@ -23,7 +23,7 @@ export default function Page({ params }: { params: { id: string } }) {
     <main>
       <div className='flex justify-between'>
         <ProfileDetail />
-        <DiscribePatron />
+        <DescribePatron />
       </div>
     </main>
  </>
