@@ -10,14 +10,11 @@
   },
   "dependencies": {
     "@rainbow-me/rainbowkit": "^1.1.2",
-<<<<<<< HEAD
-    "@tableland/sdk": "^4.5.3-dev.0",
-=======
     "@supabase/auth-helpers-nextjs": "^0.8.1",
     "@supabase/auth-ui-react": "^0.4.6",
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.38.2",
->>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
+    "@tableland/sdk": "^4.5.3-dev.0",
     "next": "13.5.5",
     "react": "^18",
     "react-dom": "^18",

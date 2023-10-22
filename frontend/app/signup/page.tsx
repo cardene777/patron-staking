@@ -29,12 +29,29 @@ async function signInWithGithub() {
   }
   
 
+const supabase = createClientComponentClient()
+
+async function signInWithGithub() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',       
+    })
+  }
+  async function signInWithTwitter() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'twitter',
+    })
+  }
+  
+
 export default function Page() {
 <<<<<<< HEAD
 =======
 
   const supabase = createClientComponentClient();
 
+<<<<<<< HEAD
+>>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
+=======
 >>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [name, setName] = useState("");

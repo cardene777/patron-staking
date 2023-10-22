@@ -8,6 +8,9 @@ export default function Page() {
     <>
 =======
   <>
+<<<<<<< HEAD
+>>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
+=======
 >>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
       <header className="flex justify-between">
         <Link href="/">
@@ -29,6 +32,7 @@ export default function Page() {
         </div>
       </header>
       <main>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
       <h1 className="text-5xl text-center font-bold">
@@ -49,6 +53,9 @@ export default function Page() {
     </>
   );
 =======
+=======
+
+>>>>>>> 5eb9cf762d02f78707aee114431840995c91f9d0
         <h1 className="text-5xl text-center font-bold">A contributor is worth patroning</h1>
         <div className="m-5 text-3xl text-center">A OSS contributor, Ecosystem contributor and researcher can do their activities from a long-term perspective with their patron</div>
         
