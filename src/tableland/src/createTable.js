@@ -18,10 +18,12 @@ const db = new Database({ signer });
 // const db = new Database();
 
 // This is the table's `prefix`--a custom table value prefixed as part of the table's name
-const prefix = "my_test_sdk_table";
+const prefix = "patron_staking";
 
 const { meta: create } = await db
-  .prepare(`CREATE TABLE ${prefix} (id integer primary key, name text);`)
+  .prepare(
+    `CREATE TABLE ${prefix} (uuid text primary key, name text, icon text, profile text, wallet_address text, description text, social_link text);`
+  )
   .run();
 
 // The table's `name` is in the format `{prefix}_{chainId}_{tableId}`
