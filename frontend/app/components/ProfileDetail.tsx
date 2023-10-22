@@ -44,9 +44,9 @@ function ProfileDetail() {
         />
       </div>
       <div className="pl-10">
-        <div className="text-3xl font-bold mb-3">tonyejang</div>
+        <div className="text-3xl font-bold mb-3">{name}</div>
         <div className="text-1xl font-bold mb-3">
-          a contributor of MEV ecosystem in L2
+          {description}
         </div>
         <div className="flex  mt-10">
           <a href="https://twitter.com/infocollecter" className="mr-10">
@@ -76,17 +76,9 @@ function ProfileDetail() {
         </div>
       </div>
 
-      <div className="mt-10 pr-5">
-        <p>
-          I&apos;ve been contributing to an open-source project called MEV-Boom
-          for the past six months to address the L2 MEV issues that arose after
-          the introduction of the shared sequencer. I&apos;m also actively
-          working to boost the MEV ecosystem in Korea. I organized the MEV Korea
-          2023 event and distribute a Korean-language newsletter titled
-          &apos;MEV Monthly News&apos;. I&apos;d be grateful if someone involved
-          in MEV could support and mentor me.
-        </p>
-      </div>
+      {/* <div className="mt-10 pr-5">
+          {description}
+      </div> */}
     </div>
   );
 }
