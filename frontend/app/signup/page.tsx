@@ -1,28 +1,12 @@
-"use client"
-import Link from 'next/link'
-import Image from 'next/image'
-import { useState } from 'react';
-
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-
-
-const supabase = createClientComponentClient()
-
-async function signInWithGithub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',       
-    })
-  }
-  async function signInWithTwitter() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-      provider: 'twitter',
-    })
-  }
-  
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { writeDb } from "@lib/tableland"
+import { User } from "@/common/types";
+import { signInWithGithub, signInWithTwitter } from "@lib/supabase";
 
 export default function Page() {
-
-  const supabase = createClientComponentClient();
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [Name, setName] = useState("");
@@ -261,4 +245,3 @@ export default function Page() {
   </>
   )
 }
-

@@ -45,25 +45,15 @@ function ProfileDetail() {
 
   return (
     <>
-<<<<<<< HEAD
-    {/* ここにdbからName、ProfileImage、whatdoyoudo、twitterlink、githublink、sociallink、discrioptionをいれる */}
-    <div className="flex justify-between mt-10 ">
+    {/* ここにdbからName、ProfileImage、whatdoyoudo、twitterlink、githublink、sociallink、descrioptionをいれる */}
+    <div className="flex justify-between mt-50 ">
         <div className="pl-10">
             <Image src="/profile_image_tonyejang.png"
             width={500}
             height={500}
-=======
-      <div className="flex justify-between">
-        <div>
-          <Image
-            src="/profile_image_tonyejang.png"
-            width={250}
-            height={250}
->>>>>>> origin/feature/20231020_frontend
             alt="Next.js"
           />
         </div>
-<<<<<<< HEAD
         <div className="pl-10">
             <div className="text-3xl font-bold mb-3">tonyejang</div>
             <div className="text-1xl font-bold mb-3">a contributor of MEV ecosystem in L2</div>
@@ -79,18 +69,7 @@ function ProfileDetail() {
                 </a>
             </div>
                 
-            <div className="mt-10 max-w-2/10">I've been contributing to an open-source project called MEV-Boom for the past six months to address the L2 MEV issues that arose after the introduction of the shared sequencer. I'm also actively working to boost the MEV ecosystem in Korea. I organized the MEV Korea 2023 event and distribute a Korean-language newsletter titled 'MEV Monthly News'. I'd be grateful if someone involved in MEV could support and mentor me.</div>
-=======
-        <div>
-          <div>{name}</div>
-          <div>{profile}</div>
-          <a href="https://twitter.com/infocollecter">twittericon</a>
-          <a href="https://github.com/zkyuki">githubicon</a>
-          <a href="https://mirror.xyz">mirroricon</a>
-          <div>
-            {description}
-          </div>
->>>>>>> origin/feature/20231020_frontend
+            <div className="mt-10 pr-5">I've been contributing to an open-source project called MEV-Boom for the past six months to address the L2 MEV issues that arose after the introduction of the shared sequencer. I'm also actively working to boost the MEV ecosystem in Korea. I organized the MEV Korea 2023 event and distribute a Korean-language newsletter titled 'MEV Monthly News'. I'd be grateful if someone involved in MEV could support and mentor me.</div>
         </div>
       </div>
     </>
