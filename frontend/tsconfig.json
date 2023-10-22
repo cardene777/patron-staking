@@ -25,6 +25,7 @@
       "@common/*": ["./common/*"],
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"],
+      "@utils/*": ["./utils/*"],
       "@config/*": ["./config/*"]
     }
   },

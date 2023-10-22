@@ -13,13 +13,13 @@ const signer = wallet.connect(provider);
 const db: Database<User> = new Database({ signer });
 
 export const writeDb = async (user: User) => {
-    const uuid = uuidv4();
+  const uuid = uuidv4();
   const { meta: insert } = await db
     .prepare(
       `INSERT INTO ${DB_NAME} (uuid, name, icon, profile, wallet_address, description, social_link) VALUES (?, ?, ?, ?, ?, ?, ?);`
     )
-      .bind(
-        uuid,
+    .bind(
+      uuid,
       user.name,
       user.icon,
       user.profile,
@@ -35,14 +35,19 @@ export const writeDb = async (user: User) => {
   // Perform a read query, requesting all rows from the table
   const { results } = await db.prepare(`SELECT * FROM ${DB_NAME};`).all();
 
-    console.log(`results: ${results}`);
-    return results;
+  console.log(`results: ${results}`);
+  return results;
 };
 
-export const readDb = async (walletAddress: string): Promise<User> => {
-    const { results } = await db
-      .prepare(`SELECT * FROM ${DB_NAME} where wallet_address = ${walletAddress};`)
-      .all();
-    console.log(results);
-    return results[0];
-}
+export const readDb = async (_name: string): Promise<User> => {
+  const result = await db
+    .prepare(`SELECT * FROM ${DB_NAME} WHERE name = ?1`).bind(_name)
+    .first();
+  console.log(result);
+  return result;
+};
+
+export const readDbAll = async (): Promise<User[]> => {
+  const { results } = await db.prepare(`SELECT * FROM ${DB_NAME};`).all();
+  return results;
+};

@@ -1,27 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { readDb } from "@/lib/tableland";
-import { User } from "@common/types";
-import { Address, useAccount, useConnect, useSignMessage } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
+import { User } from "@common/types"
 
 function ProfileDetail() {
-  const { isConnected, address } = useAccount();
-  const { connect, connectAsync, error } = useConnect({
-    connector: new InjectedConnector(),
-  });
-
-  const [name, setName] = useState<string>("")
-  const [icon, setIcon] = useState<string>("")
-  const [profile, setProfile] = useState<string>("")
+  const pathname = usePathname();
+  const [name, setName] = useState<string>("");
+  const [icon, setIcon] = useState<string>("");
+  const [profile, setProfile] = useState<string>("");
   const [walletAddress, setWalletAddress] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [socialLink, setSocialLink] = useState<string>("");
 
-  const getUserData  = async (_walletAddress: string) => {
-    const userData: User = await readDb(_walletAddress);
+  const getUserData = async (path: string) => {
+    const userData: User = await readDb(path);
     if (userData) {
       setName(userData?.name);
       setIcon(userData?.icon);
@@ -33,18 +29,11 @@ function ProfileDetail() {
   };
 
   useEffect(() => {
-    if (address) getUserData(address);
-  }, [address]);
-
-  useEffect(() => {
-    connect();
-    if (address) {
-      setWalletAddress(address as string);
-    }
-  }, [address, connect]);
+    const path = pathname.replace("/", "");
+    getUserData(path);
+  }, [pathname]);
 
   return (
-    <>
       <div className="flex justify-between">
         <div>
           <Image
@@ -54,18 +43,21 @@ function ProfileDetail() {
             alt="Next.js"
           />
         </div>
-        <div>
-          <div>{name}</div>
-          <div>{profile}</div>
-          <a href="https://twitter.com/infocollecter">twittericon</a>
-          <a href="https://github.com/zkyuki">githubicon</a>
-          <a href="https://mirror.xyz">mirroricon</a>
-          <div>
-            {description}
-          </div>
+        <div className="ml-4">
+          <p className="font-semibold text-xl">Name: {name}</p>
+          <p className="text-lg">{profile}</p>
+          <p>
+            <Link href="https://twitter.com/infocollecter">twittericon</Link>
+          </p>
+          <p>
+            <Link href="https://github.com/zkyuki">githubicon</Link>
+          </p>
+          <p>
+            <Link href="https://mirror.xyz">mirroricon</Link>
+          </p>
+          <p className="text-lg">description: {description}</p>
         </div>
       </div>
-    </>
   );
 }
 
