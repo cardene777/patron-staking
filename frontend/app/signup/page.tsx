@@ -3,9 +3,26 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react';
 
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
+
+const supabase = createClientComponentClient()
+
+async function signInWithGithub() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',       
+    })
+  }
+  async function signInWithTwitter() {
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'twitter',
+    })
+  }
+  
 
 export default function Page() {
+
+  const supabase = createClientComponentClient();
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [Name, setName] = useState("");
@@ -60,7 +77,8 @@ export default function Page() {
           </button>
         </div>
     </header>
-    
+    <button onClick={signInWithGithub}>Github auth</button>
+    <button onClick={signInWithTwitter}>Twitter auth</button>
     <main>
       <div className="mt-40 mx-20">
         <div className="flex justify-center mt-32 mx-10 mb-10">
@@ -90,6 +108,7 @@ export default function Page() {
                 />
               </div>
             </div>
+            
             <div className="md:flex md:items-center mb-6">
               <div className="md:w-1/3">
                 <label
@@ -219,3 +238,4 @@ export default function Page() {
   </>
   )
 }
+

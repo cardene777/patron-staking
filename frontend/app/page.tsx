@@ -7,7 +7,7 @@ import HomeCard from './components/HomeCard'
 export default function Page() {
   return (
   <>
-        <header className="flex justify-between">
+      <header className="flex justify-between">
         <Link href="/">
           <Image src="/PatronStaking.png" width={300} height={300} alt="PatronStaking" className="p-8"/>
         </Link>
@@ -21,19 +21,20 @@ export default function Page() {
   
         </div>
       </header>
+      <main>
 
-      <h1 className="text-5xl text-center font-bold">A contributor is worth patroning</h1>
-      <div className="m-5 text-3xl text-center">A OSS contributor, Ecosystem contributor and researcher can do their activities from a long-term perspective with their patron</div>
-      
-      <Link href="tonyejang" className="flex justify-between flex-wrap">
-        {/* ここにProfileImageとName + "is" + whatdoyoudo をdbから引っ張ってくる*/}
-        <HomeCard/>
-        <HomeCard/>
-        <HomeCard/>
-        <HomeCard/>
+        <h1 className="text-5xl text-center font-bold">A contributor is worth patroning</h1>
+        <div className="m-5 text-3xl text-center">A OSS contributor, Ecosystem contributor and researcher can do their activities from a long-term perspective with their patron</div>
+        
+        <Link href="tonyejang" className="flex justify-between flex-wrap">
+          {/* ここにProfileImageとName + "is" + whatdoyoudo をdbから引っ張ってくる*/}
+          <HomeCard/>
+          <HomeCard/>
+          <HomeCard/>
+          <HomeCard/>
 
-        </Link>
-      
+          </Link>
+      </main>
  </>
   )
 }
