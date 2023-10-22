@@ -5,9 +5,19 @@ coverage.json
 typechain
 typechain-types
 
+# Local
+.vscode/
+.DS_Store
+
+# Next.js
+.next/
+
 # Hardhat
 types/
-.vscode/
+
+# Supabase
+.branches
+.temp
 
 # Logs
 logs
